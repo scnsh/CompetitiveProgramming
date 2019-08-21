@@ -15,15 +15,15 @@
 N, M = map(int, input().split())
 A = [int(input()) for m in range(M)]
 A = set(A)
-dp=[0]*(N+1)
-dp[0]=1
+dp = [0]*(N+1)
+dp[0] = 1
 if 1 in A:
-  dp[1]=0
+    dp[1] = 0
 else:
-  dp[1]=1
-for i in range(2,N+1):
-  if i in A:
-    dp[i]=0
-  else:
-    dp[i]=dp[i-1]+dp[i-2]
-print(dp[N]%1000000007)
+    dp[1] = 1
+for i in range(2, N+1):
+    if i in A:
+        dp[i] = 0
+    else:
+        dp[i] = dp[i-1]+dp[i-2]
+print(dp[N] % 1000000007)

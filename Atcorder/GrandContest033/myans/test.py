@@ -36,6 +36,6 @@ abs_a = list(map(abs, a[:]))
 s = sum(abs_a[:])
 m = len([i for i in a if i < 0])
 if m % 2 == 0:
-  print(s)
+    print(s)
 else:
-  print(s - 2 * min(abs_a))
+    print(s - 2 * min(abs_a))

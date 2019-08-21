@@ -3,7 +3,7 @@
 #     return [0,1]
 #   elif x == 'L':
 #     return [0,-1]
-#   elif x == 'U': 
+#   elif x == 'U':
 #     return [-1, 0]
 #   elif x == 'D':
 #     return [1,0]
@@ -35,38 +35,44 @@
 
 #   return offset
 
-h,w,n = map(int,input().split())
-sr,sc = map(int,input().split())
+h, w, n = map(int, input().split())
+sr, sc = map(int, input().split())
 s = input()
 t = input()
 wr = sc
 wl = sc
 hu = sr
 hd = sr
-def taka(k,wr,wl,hu,hd):
-    if k=='U':
+
+
+def taka(k, wr, wl, hu, hd):
+    if k == 'U':
         hu -= 1
-    if k=='D':
+    if k == 'D':
         hd += 1
-    if k=='R':
+    if k == 'R':
         wr += 1
-    if k=='L':
+    if k == 'L':
         wl -= 1
-    return wr,wl,hu,hd
-def ao(k,wr,wl,hu,hd):
-    if k=='U':
-        hd = max(1,hd-1)
-    if k=='D':
-        hu = min(h,hu+1)
-    if k=='R':
-        wl = min(w,wl+1)
-    if k=='L':
-        wr = max(1,wr-1)
-    return wr,wl,hu,hd
+    return wr, wl, hu, hd
+
+
+def ao(k, wr, wl, hu, hd):
+    if k == 'U':
+        hd = max(1, hd-1)
+    if k == 'D':
+        hu = min(h, hu+1)
+    if k == 'R':
+        wl = min(w, wl+1)
+    if k == 'L':
+        wr = max(1, wr-1)
+    return wr, wl, hu, hd
+
+
 for i in range(n):
-    wr,wl,hu,hd = taka(s[i],wr,wl,hu,hd)
-    if wl==0 or hu==0 or hd==h+1 or wr==w+1:
+    wr, wl, hu, hd = taka(s[i], wr, wl, hu, hd)
+    if wl == 0 or hu == 0 or hd == h+1 or wr == w+1:
         print('NO')
         exit()
-    wr,wl,hu,hd = ao(t[i],wr,wl,hu,hd)
+    wr, wl, hu, hd = ao(t[i], wr, wl, hu, hd)
 print('YES')
