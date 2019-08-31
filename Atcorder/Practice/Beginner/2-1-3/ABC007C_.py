@@ -16,9 +16,10 @@ def search(x, y):
         x, y = dq.popleft()
         for dx, dy in [[1, 0], [0, 1], [-1, 0], [0, -1]]:
             nx, ny = [x+dx, y+dy]
-            if 0 <= nx < H and 0 <= ny < W and copied_maze[nx][ny] != '#' and type(copied_maze[nx][ny]) is str:
-                dq.append([nx, ny])
-                copied_maze[nx][ny] = copied_maze[x][y]+1
+            if 0 <= nx < H and 0 <= ny < W and copied_maze[nx][ny] != '#':
+                if type(copied_maze[nx][ny]) is str:
+                    dq.append([nx, ny])
+                    copied_maze[nx][ny] = copied_maze[x][y]+1
 
 
 search(s[0]-1, s[1]-1)
