@@ -19,7 +19,7 @@ def bfs():
     while dq:
         y, x = dq.popleft()
         for dy, dx in moves:
-            ny, nx = (y+dy, x+dx)
+            ny, nx = (y + dy, x + dx)
             if 0 <= ny < H and 0 <= nx < W and cnt[ny][nx] == float('inf'):
                 if c[ny][nx] == '.' or c[ny][nx] == 'g':
                     cnt[ny][nx] = cnt[y][x] + 0
