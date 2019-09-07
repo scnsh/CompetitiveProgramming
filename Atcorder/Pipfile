@@ -9,6 +9,7 @@ flake8 = "*"
 autopep8 = "*"
 
 [packages]
+numpy = "*"
 
 [requires]
 python_version = "3.7"
