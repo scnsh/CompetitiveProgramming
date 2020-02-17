@@ -3,7 +3,6 @@ import itertools
 
 def cost(c, N):
 
-
 N, M, K = map(int, input().split())
 comb = list(itertools.combinations(range(N*M), K))
 sum = 0
